@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "772892283047",
+    "project_id": "mobifixer-4cc1d",
+    "storage_bucket": "mobifixer-4cc1d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772892283047:android:d7ac5f3f63d7db2ef4cb82",
+        "android_client_info": {
+          "package_name": "com.example.mobifixer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772892283047-i9nt35eus7r3dqbdqkf9uscnq09u9m0v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD2yPgkafwOQBU9cbN9DxruSBWWDrYNhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772892283047-i9nt35eus7r3dqbdqkf9uscnq09u9m0v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

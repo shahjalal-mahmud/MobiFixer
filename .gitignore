@@ -1,0 +1,31 @@
+# Ignore Android Studio project files
+*.iml
+/.idea/
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# Ignore Gradle and build-related files
+.gradle/
+local.properties
+/local.properties
+/build/
+app/build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Ignore dependency caches and generated files
+/.gradle/
+/gradle/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Firebase and sensitive files
+/google-services.json
+/*.keystore
