@@ -1,71 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Table Header -->
-    <LinearLayout
+    <!-- Horizontal ScrollView for wide data display -->
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#D3D3D3"
-        android:textColor="#000000"
-        android:padding="8dp">
+        android:scrollbars="horizontal"
+        tools:ignore="MissingConstraints">
 
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/id"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:textSize="14sp"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/name"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:textSize="14sp"/>
+            <!-- Table Header -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="#CCCCCC">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/phone"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:textSize="14sp"/>
+                <TextView
+                    android:text="@string/id"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/device"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:textSize="14sp"/>
+                <TextView
+                    android:text="@string/name"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/delivery_date"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:textSize="14sp"/>
-    </LinearLayout>
+                <TextView
+                    android:text="@string/phone"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
 
-    <!-- RecyclerView for displaying customer details -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/customer_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"/>
-</LinearLayout>
+                <TextView
+                    android:text="@string/device"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:text="@string/delivery_date"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/customer_recycler_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
