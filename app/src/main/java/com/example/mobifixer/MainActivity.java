@@ -3,10 +3,18 @@ package com.example.mobifixer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentContainerView;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -14,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private Button logoutButton;
+    private NavController navController;
+    private BottomNavigationView bottomNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,40 +39,51 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        // Initialize the logout button
+        // Initialize logout button
         logoutButton = findViewById(R.id.logoutButton);
 
-        // Check if the user is logged in, if not redirect to LoginActivity
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser == null) {
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));  // Redirect to login if user is not logged in
-            finish();  // Close the current activity
+        // Logout button click listener
+        logoutButton.setOnClickListener(v -> {
+            mAuth.signOut();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+        });
+
+        // Set up navigation controller
+        FragmentContainerView navHostFragment = findViewById(R.id.nav_host_fragment);
+        bottomNav = findViewById(R.id.bottom_navigation);
+
+        if (navHostFragment != null) {
+            // Use FragmentManager to ensure NavHostFragment is ready
+            NavHostFragment navHostFragmentInstance = (NavHostFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.nav_host_fragment);
+
+            if (navHostFragmentInstance != null) {
+                navController = navHostFragmentInstance.getNavController();
+                NavigationUI.setupWithNavController(bottomNav, navController);
+            }
         }
 
-        // Logout button click handler
-        logoutButton.setOnClickListener(v -> {
-            mAuth.signOut();  // Signs the user out of Firebase
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));  // Redirect to login activity
-            finish();  // Close MainActivity
-        });
+        // Check user authentication status
+        checkUserStatus();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        if (currentUser != null) {
-            // Check if this activity was started from DashboardActivity
-            if (getIntent().getBooleanExtra("fromDashboard", false)) {
-                return; // Do nothing, stay in MainActivity
-            }
-
-            // Otherwise, navigate to DashboardActivity
-            startActivity(new Intent(MainActivity.this, DashboardActivity.class));
-            finish();
-        }
+        checkUserStatus();
     }
 
+    private void checkUserStatus() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if (currentUser == null) {
+            // User not logged in, redirect to LoginActivity
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+        } else if (!getIntent().getBooleanExtra("fromDashboard", false)) {
+            // If user is logged in but not from DashboardActivity, redirect to Dashboard
+            navController.navigate(R.id.dashboardFragment);
+        }
+    }
 }

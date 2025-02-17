@@ -15,4 +15,12 @@
     <string name="logout">Logout</string>
     <string name="go_to_main_activity">Go to Main Activity</string>
     <string name="enter_name">Enter Name\n</string>
+    <string name="search_by_phone">Search by Phone</string>
+    <string name="sort_deliveries">Sort Deliveries</string>
+    <string name="welcome_to_mobifixer">Welcome to MobiFixer</string>
+    <string name="dashboard_screen">Dashboard Screen</string>
+    <string name="go_to_settings">Go to Settings</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="services">Services</string>
+    <string name="profile">Profile</string>
 </resources>

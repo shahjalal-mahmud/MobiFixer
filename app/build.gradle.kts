@@ -54,14 +54,23 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
-    implementation("com.google.firebase:firebase-auth")
+    // ✅ Jetpack Compose Navigation
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
 
-    // Google Sign-In
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
 
-    // Testing
+    // ✅ (Optional) Jetpack Compose Navigation Animations
+    implementation(libs.accompanist.navigation.animation)
+
+    // ✅ Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
+
+    // ✅ Google Sign-In
+    implementation(libs.play.services.auth)
+
+    // ✅ Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
