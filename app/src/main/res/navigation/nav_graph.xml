@@ -29,4 +29,14 @@
         android:name="com.example.mobifixer.ui.DashboardFragment"
         android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/addCustomerFragment"
+        android:name="com.example.mobifixer.ui.AddCustomerFragment"
+        android:label="Add Customer"
+        tools:layout="@layout/fragment_add_customer" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_addCustomerFragment"
+            app:destination="@id/addCustomerFragment"/>
+
 </navigation>

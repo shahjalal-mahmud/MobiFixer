@@ -23,4 +23,19 @@
     <string name="dashboard">Dashboard</string>
     <string name="services">Services</string>
     <string name="profile">Profile</string>
+    <string name="add_new_customer">Add New Customer</string>
+    <string name="edit_customer">Edit Customer</string>
+    <string name="delete_customer">Delete Customer</string>
+    <string name="all_customers">All Customers</string>
+    <string name="customer_id_auto_generated">Customer ID: AUTO-GENERATED</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="device_model">Device Model</string>
+    <string name="delivery_date">Delivery Date</string>
+    <string name="save_customer">Save Customer</string>
+    <string name="select_delivery_date">Select Delivery Date</string>
+    <string name="select_date">Select Date</string>
+    <string name="id">ID</string>
+    <string name="phone">Phone</string>
+    <string name="device">Device</string>
 </resources>

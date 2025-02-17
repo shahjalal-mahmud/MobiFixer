@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Unique ID (Non-Editable) -->
+    <TextView
+        android:id="@+id/tv_customer_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/customer_id_auto_generated"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingBottom="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#808080"
+        android:textColorHighlight="#FFEB3B"/>
+
+    <!-- Customer Name -->
+    <EditText
+        android:id="@+id/et_customer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/customer_name"
+        android:minHeight="48dp"
+        android:textColor="#000000"
+        android:textColorHint="#808080"
+        android:textColorHighlight="#FFEB3B"/>
+
+    <!-- Phone Number -->
+    <EditText
+        android:id="@+id/et_customer_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:textColor="#000000"
+        android:textColorHint="#808080"
+        android:textColorHighlight="#FFEB3B"/>
+
+    <!-- Device Model -->
+    <EditText
+        android:id="@+id/et_device_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/device_model"
+        android:minHeight="48dp"
+        android:textColor="#000000"
+        android:textColorHint="#808080"
+        android:textColorHighlight="#FFEB3B"/>
+
+    <!-- Delivery Date -->
+    <TextView
+        android:id="@+id/tv_delivery_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/select_delivery_date"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background" />
+
+    <Button
+        android:id="@+id/btn_select_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_date"
+        android:layout_marginTop="10dp"/>
+
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/btn_save_customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save_customer"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>
