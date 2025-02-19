@@ -30,30 +30,35 @@
                     android:text="@string/id"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:text="@string/name"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:text="@string/phone"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:text="@string/device"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:text="@string/delivery_date"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black" 
                     android:textStyle="bold"/>
             </LinearLayout>
 

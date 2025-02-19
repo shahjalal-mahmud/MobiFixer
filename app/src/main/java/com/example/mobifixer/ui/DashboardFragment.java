@@ -27,6 +27,7 @@ public class DashboardFragment extends Fragment {
         // Initialize buttons
         Button btnAllCustomers = view.findViewById(R.id.btn_all_customers);
         Button btnAddNewCustomer = view.findViewById(R.id.btn_add_customer);
+        Button btnSearchCustomer = view.findViewById(R.id.btn_search_customer);
 
         // Set click listener for "All Customers" button
         btnAllCustomers.setOnClickListener(v -> {
@@ -39,6 +40,11 @@ public class DashboardFragment extends Fragment {
         // Set click listener to navigate to AddCustomerFragment
         btnAddNewCustomer.setOnClickListener(v ->
                 Navigation.findNavController(v).navigate(R.id.action_dashboardFragment_to_addCustomerFragment)
+        );
+
+        // Set click listener to navigate to SearchCustomerFragment
+        btnSearchCustomer.setOnClickListener(v ->
+                Navigation.findNavController(v).navigate(R.id.action_dashboardFragment_to_searchCustomerFragment)
         );
 
         return view;

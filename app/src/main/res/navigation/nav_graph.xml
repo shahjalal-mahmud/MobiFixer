@@ -28,15 +28,28 @@
         android:id="@+id/dashboardFragment"
         android:name="com.example.mobifixer.ui.DashboardFragment"
         android:label="Dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard">
+
+        <!-- ✅ Moved inside DashboardFragment -->
+        <action
+            android:id="@+id/action_dashboardFragment_to_addCustomerFragment"
+            app:destination="@id/addCustomerFragment"/>
+
+        <action
+            android:id="@+id/action_dashboardFragment_to_searchCustomerFragment"
+            app:destination="@id/searchCustomerFragment"/>
+    </fragment>
 
     <fragment
         android:id="@+id/addCustomerFragment"
         android:name="com.example.mobifixer.ui.AddCustomerFragment"
         android:label="Add Customer"
         tools:layout="@layout/fragment_add_customer" />
-        <action
-            android:id="@+id/action_dashboardFragment_to_addCustomerFragment"
-            app:destination="@id/addCustomerFragment"/>
+
+    <fragment
+        android:id="@+id/searchCustomerFragment"
+        android:name="com.example.mobifixer.ui.SearchCustomerFragment"
+        android:label="Search Customer"
+        tools:layout="@layout/fragment_search_customer"/>
 
 </navigation>
