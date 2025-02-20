@@ -52,8 +52,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public Cursor getAllCustomers() {
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM customers", null);
+        return db.rawQuery("SELECT * FROM customers ORDER BY delivery_date ASC", null);
     }
+
+
 
     // Method to search for a customer by phone number
     public Cursor searchCustomerByPhone(String phone) {

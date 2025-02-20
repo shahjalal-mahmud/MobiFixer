@@ -1,5 +1,6 @@
 package com.example.mobifixer.ui;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -44,6 +45,7 @@ public class SearchCustomerFragment extends Fragment {
         return view;
     }
 
+    @SuppressLint("SetTextI18n")
     private void searchCustomer() {
         String phone = etPhone.getText().toString().trim();
         if (phone.isEmpty()) {
@@ -60,14 +62,10 @@ public class SearchCustomerFragment extends Fragment {
 
             // Display customer details
             tvResult.setText(
-                    "ID: " + id + "\n" +
-                            "Name: " + name + "\n" +
-                            "Phone: " + phone + "\n" +
-                            "Device: " + device + "\n" +
-                            "Delivery Date: " + date
+                    String.format("ID: %s\nName: %s\nPhone: %s\nDevice: %s\nDelivery Date: %s", id, name, phone, device, date)
             );
         } else {
-            tvResult.setText("No customer found with this phone number.");
+            tvResult.setText("@string/no_customer_found");
         }
         cursor.close();
     }

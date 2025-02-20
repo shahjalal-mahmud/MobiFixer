@@ -43,4 +43,6 @@
     <string name="search">Search</string>
     <string name="enter_phone_number">Enter Phone Number</string>
     <string name="customer_details_will_appear_here">Customer details will appear here.</string>
+    <string name="no_customer_found">No customer found with this phone number.</string>
+    <string name="sort_by_delivery_date">Sort by Delivery Date</string>
 </resources>
