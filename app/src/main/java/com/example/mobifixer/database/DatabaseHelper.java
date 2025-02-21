@@ -62,5 +62,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM customers WHERE phone=?", new String[]{phone});
     }
+    // Method for delete a customer
+    public boolean deleteCustomer(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int deletedRows = db.delete("customers", "id = ?", new String[]{id});
+        return deletedRows > 0; // Returns true if a row was deleted
+    }
 
 }

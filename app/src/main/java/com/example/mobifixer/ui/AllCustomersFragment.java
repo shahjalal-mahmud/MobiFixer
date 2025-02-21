@@ -54,7 +54,7 @@ public class AllCustomersFragment extends Fragment {
         }
         cursor.close();
 
-        customerAdapter = new CustomerAdapter(customerList);
+        customerAdapter = new CustomerAdapter(requireContext(), customerList);
         recyclerView.setAdapter(customerAdapter);
     }
 }
