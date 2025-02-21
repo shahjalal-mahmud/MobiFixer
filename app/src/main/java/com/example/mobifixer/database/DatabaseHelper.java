@@ -50,6 +50,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long result = db.insert(TABLE_CUSTOMERS, null, values);
         return result != -1;
     }
+
+    // AUtomatically Sort by Delivery Date
     public Cursor getAllCustomers() {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM customers ORDER BY delivery_date ASC", null);
