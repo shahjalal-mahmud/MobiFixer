@@ -1,8 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:background="@color/white">
 
     <!-- Unique ID (Non-Editable) -->
     <TextView
@@ -11,71 +15,114 @@
         android:layout_height="wrap_content"
         android:text="@string/customer_id_auto_generated"
         android:textStyle="bold"
-        android:textSize="16sp"
-        android:paddingBottom="10dp"
-        android:textColor="#000000"
-        android:textColorHint="#808080"
-        android:textColorHighlight="#FFEB3B"/>
+        android:textSize="18sp"
+        android:paddingBottom="16dp"
+        android:textColor="@color/black"
+        tools:ignore="HardcodedText" />
 
     <!-- Customer Name -->
-    <EditText
-        android:id="@+id/et_customer_name"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_customer_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/customer_name"
-        android:minHeight="48dp"
-        android:textColor="#000000"
-        android:textColorHint="#808080"
-        android:textColorHighlight="#FFEB3B"/>
+        app:boxStrokeColor="@color/black"
+        android:layout_marginBottom="16dp"
+        app:shapeAppearanceOverlay="@style/RoundedTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_customer_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_600"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Phone Number -->
-    <EditText
-        android:id="@+id/et_customer_phone"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_customer_phone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/phone_number"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        android:textColor="#000000"
-        android:textColorHint="#808080"
-        android:textColorHighlight="#FFEB3B"/>
+        app:boxStrokeColor="@color/black"
+        android:layout_marginBottom="16dp"
+        app:shapeAppearanceOverlay="@style/RoundedTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_customer_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_600"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Device Model -->
-    <EditText
-        android:id="@+id/et_device_model"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_device_model"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/device_model"
-        android:minHeight="48dp"
-        android:textColor="#000000"
-        android:textColorHint="#808080"
-        android:textColorHighlight="#FFEB3B"/>
+        app:boxStrokeColor="@color/black"
+        android:layout_marginBottom="16dp"
+        app:shapeAppearanceOverlay="@style/RoundedTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_device_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_600"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Delivery Date -->
-    <TextView
-        android:id="@+id/tv_delivery_date"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_delivery_date"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/select_delivery_date"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:background="@android:drawable/editbox_background" />
+        app:boxStrokeColor="@color/black"
+        android:layout_marginBottom="16dp"
+        app:shapeAppearanceOverlay="@style/RoundedTextInputLayout">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_delivery_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_600"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Select Date Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_select_date"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/select_date"
-        android:layout_marginTop="10dp"/>
-
+        android:textAllCaps="false"
+        android:layout_marginTop="8dp"
+        app:backgroundTint="@color/purple_500"
+        app:cornerRadius="8dp" />
 
     <!-- Save Button -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_save_customer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/save_customer"
-        android:layout_marginTop="20dp"/>
+        android:textAllCaps="false"
+        android:layout_marginTop="24dp"
+        app:backgroundTint="@color/teal_700"
+        app:cornerRadius="8dp" />
 
 </LinearLayout>
