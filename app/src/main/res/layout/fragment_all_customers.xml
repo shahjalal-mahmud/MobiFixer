@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/white">
 
     <!-- Horizontal ScrollView for wide data display -->
     <HorizontalScrollView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:scrollbars="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -23,43 +27,55 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="8dp"
-                android:background="#CCCCCC">
+                android:padding="12dp"
+                android:background="?attr/colorPrimarySurface"
+                android:elevation="4dp"
+                android:outlineProvider="background">
 
                 <TextView
                     android:text="@string/id"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="8dp" />
 
                 <TextView
                     android:text="@string/name"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="8dp" />
 
                 <TextView
                     android:text="@string/phone"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="8dp" />
 
                 <TextView
                     android:text="@string/device"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="8dp" />
 
                 <TextView
                     android:text="@string/delivery_date"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black" 
-                    android:textStyle="bold"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="8dp" />
             </LinearLayout>
 
             <!-- RecyclerView -->
@@ -67,7 +83,9 @@
                 android:id="@+id/customer_recycler_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"/>
+                android:padding="8dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never" />
         </LinearLayout>
     </HorizontalScrollView>
 
