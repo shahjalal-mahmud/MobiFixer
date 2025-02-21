@@ -14,12 +14,12 @@ A mobile repair management application built using **Java, SQLite, and Firebase 
 
 ---
 
-## 📌 Technologies Used  
-- **Java** (for Android development)  
-- **SQLite** (local database)  
-- **Firebase Authentication** (user authentication)  
-- **RecyclerView** (for displaying customers)  
-- **Jetpack Navigation** (for managing fragments)  
+## 📌 Technologies Used
+- **Java 11** (required for Android development)
+- **SQLite** (local database)
+- **Firebase Authentication** (user authentication)
+- **RecyclerView** (for displaying customers)
+- **Jetpack Navigation** (for managing fragments)
 
 ---
 
@@ -95,6 +95,7 @@ cd MobiFixer
 ### 🔹 App Crashes on Start?  
 - Check if `google-services.json` is properly added.  
 - Ensure Firebase Authentication is set up correctly.  
+- Ensure you are using Java 11 (jvmTarget = "11") in your Gradle settings.
 
 ### 🔹 Database Not Updating?  
 - Try clearing app data:  
