@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.example.mobifixer.R;
 import com.example.mobifixer.database.DatabaseHelper;
 import java.util.Calendar;
+import java.util.Random;
 
 public class AddCustomerFragment extends Fragment {
 
@@ -97,6 +98,14 @@ public class AddCustomerFragment extends Fragment {
     }
 
     private String generateUniqueId() {
-        return "CUST-" + System.currentTimeMillis();
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; // Allowed characters
+        StringBuilder uniqueId = new StringBuilder();
+        Random random = new Random();
+
+        for (int i = 0; i < 6; i++) {
+            uniqueId.append(chars.charAt(random.nextInt(chars.length())));
+        }
+
+        return uniqueId.toString(); // Returns a 6-character alphanumeric ID
     }
 }
